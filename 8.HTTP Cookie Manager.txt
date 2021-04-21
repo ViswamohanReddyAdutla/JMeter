@@ -1,0 +1,29 @@
+1.While logging into secure applications cookie manager places an important role.
+2.When i try to test below application all steps were passed but when we expand the results in View results Tree, We see the text that was available before logging page.
+    https://the-internet.herokuapp.com/login
+3.It is means something is going wrong somewhere.
+4.here HTTp cookie manager coming into the picture.
+  example:
+    1.If we try to login into FB i.e., facebook.com by using credentails -> Here it will store a cookie by browser that cookie is called as session cookie.
+    2.Once you login into fb, lets assume that your trying to navigate to profile option so when you click on button profile browser automatically sent request to server along with session
+      cookie that was stored in above step
+    3.Like that for each and every operation inside of the facebook,it will send request to respective server by attaching session cookie so that FB will find particular option using
+      session cookie as unique 
+    4.logout and try to login again then you dont need to pass credentials as it was already stored in session cookie by the browser
+    5.This cookies will expiry may be 1 month/2 months/based on the server data base.
+    6.Even you can clear cookies in browser itself if you want.
+
+5.Whenever your dealing with secured applications will come across cookies concept.
+6.As per point number 3, my scripts were getting failed bcz when i try to login to application it is storing cookies and performing authentication on cookies, where as in jmeter we are
+  not storing any cookies as due to jmeter wont depend on the browser.
+7.So if we add cookies then our problem will get resolved, add cookies manager like below
+  Right click on Thread Group -> Add -> Config Elements -> HTTP Cookie Manager
+   Note : Make sure you have to add this cookie manager under thread group so that whenever it found cookies it will store overthere and it will available for all steps in that test script.
+
+8.After adding into the cookie manager, I am able to see the response which we had after logging into the browser is same as our actual response.
+9.As of now we are verifying the actual response manually in jmeter, lets try out some assertions instead of doing verifications manually.
+
+
+
+    
+    

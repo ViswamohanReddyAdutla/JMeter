@@ -1,0 +1,17 @@
+1.If controller:
+  If controller is used to control the execution of the sampler/controller inside of this loop is based on the condition.
+2.If condition is not satisfied then it will skip that sampler/controller.
+3.After creating samples/controllers inside of this controller just select if loop controller then it will ask you for the condition where we need to pass the condition according
+  to business logic.
+4.We can use variables in jmeters like below
+  click on test plan -> click on Add button -> then under name section you have to pass variable name and under value need to pass value of that variable.
+    example :
+       my_var    10
+5.Once variable creation is done, we can pass that variable in if condition if you want.
+   "${my_var}" > "5"
+6.While creating variable i have passed value of that variable as 10 and in if loop controller we have compared wheather our variable value is greater than or not
+  if our variable is greater than given value in condition then it will execute wheaterver the controllers/samplers inside of this controllers. else it will skip those.
+7.Loop controller:
+  Loop controller is same like runtime controller where it will take how many seconds particular sampler/controller will execute where as Loop controller will loop the
+  particular sampler/controller based on our input
+8.If we give loop count as 3 then it will loop particular sampler/controller three times.

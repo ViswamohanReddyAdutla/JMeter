@@ -1,0 +1,33 @@
+1.Controllers are special feature that was provided by jmeter to control the performance of modules of applications.
+2.Basically controller are containers/folders which will store all our requests.
+3.Whatever the actions that we are going to perform in front end called as request.
+  Example :
+   Search for flights,select flight                              -   2 requests
+   Passanger details,payment info  and confirm button            -   1 request
+
+4.So totally we have 3 requests and now will create a container and will group few request in one controller and few requests in another controllers.
+   controller_1  = flight selection controller                    - Login using valid credentails                                        -> will place these requests in login controller
+   controller_2  = flight booking controller                      - Search for flights, give all required details and select flights     -> will place all these requests in flight controller
+  
+5.So we have combined all these 3 requests in two controllers.
+6.Now,lets say if client wants to know, how much time it will take for flight selection controller then we can give throughput and average time for the first controller in that 
+  controller we have two steps i.e., search for flights and select flights so we can give status of these two actions in a single shot using controllers. 
+7.Jmeter has number of controllers but most of the people use 3 or 4 controllers, below are those.
+   Transaction controller
+   Loop Controller
+   Runtime controller
+   Recording controller
+   Module controller
+8.As of now i am talking requests but in jmeter terminology those were called as samplers.
+9.To create controllers follow below process
+  Right click on test plan -> Add -> Non-Test Elements -> HTTPS Test Script Recorder
+   Now Select HTTPS Test Script Recorder -> under Test Plan creation -> select Use Recording controller option in target controller edit box
+   Select Request filtering -> click on Add suggested excludes.
+10.Now right click on test plan and create a thread group asusal.
+11.Now Right click on thread group that we created -> Add -> Logic controller -> Recording controller
+12.Now start record scripts same as earlier but for this time just create script until login and then hold on but no need to stop/pause recording.
+13.After completion of script creation, we need to move all those steps into inside of the first controller, like wise we need to complete all requests and need to seperate all scripts in
+   controllers.
+
+
+ 

@@ -1,0 +1,18 @@
+1.As of last document we have executed scrit right, in result it will update each and every sample average time and also controller average time and throughput.
+2.If we want to see only controller resulst then select on the controller and click on Generate parent sample.
+3.Transaction controllers help us to generate statics for each and every sample/each and every controller
+4.Simple controller is also helps to group required steps into respective controller and also it wont generate report in controller level. instead it will generate report in steps level.
+5.The only advantage of simple controller is we can able to seperate each steps in seperate folder thats it nothing more than this.so if you want to track performance in transaction
+  level then you must go with transaction level controller.
+6.Lets say if your trying to execute same code again and again then you need to create the test script for same again and again right, to avoid that module controllers comes 
+  into the picture.
+7.Module controller:
+   How to create module controller 
+    Right click on Thread group -> Add -> Logic controllers -> Module controllers
+8.Just click on module controllers and then where you can see all the existing controllers where you can select whatever the controller you need to execute again just click on it.
+9.Thats it while executing script whatever the controller you passed under module controller, it will execute and you can even see it in resulst too that how many times particular
+  controller is executed like that.
+
+ 
+   
+ 

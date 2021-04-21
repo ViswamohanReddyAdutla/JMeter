@@ -1,0 +1,21 @@
+1.As of now we have executed scripts from both GUI and Non GUI Mode
+2.In Non GUI mode, we excuted our scripts from command prompt but the results is not that good.
+3.If your looking more on results side then we have a an option that is Blazemeter cloud execution.
+4.Once your done wit your script creation.
+5.Go to chrome and click on blazemeter option then login
+6.Once you navigate to the blazemeter home page you can see an option called as Create Test just click on it.
+7.Click on Performance Test option, it will allow jmeter scripts
+8.Now upload exisiting/created script over there using upload script option.
+9.After that you can modify like how many thread you need to run, Duration of the script, Ramp up time etc., same like Jmeter GUI.
+10.Once your done with all options you need to select Run Test option in left side.
+11.Now click on Luanch servers option so that it will launch servers in the cloud instead of your machine.
+12.To start your script it will take around 2-4 minutes and then it will execute scripts until your criteria mets the condition.
+13.Once the execution is done it will generate the results and visible to us in the same screen.
+14.We can see graphical representaion and throughput details etc.., so that we can just take screens and share to our customers for review.
+
+
+Note : Always better to use Blazemeter cloud to test our scripts bcz if we want to apply load with thousand users, it will put pressure on our machine
+       bcz in back end it will start application 1000 times for that we need high configuration laptops where as in blazemeter cloud it wont touch our system instead it will execute
+       in blazemeter servers so will get exact response from the server from our application.
+
+       In Blazemeter we need to upgrade our plan if we want to use more threads as in free version you wont get much access.

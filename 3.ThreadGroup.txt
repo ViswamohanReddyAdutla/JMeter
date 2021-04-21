@@ -1,0 +1,22 @@
+1.Thread group : Set of threads/users executing the same scenario.
+2.Thread group will help us to put load on the application for testing
+3.After creating the test scripts, we need to create thread groups for particular test then it will apply load for that test case.
+4.To create a thread group follow below 
+  a) Right click on test plan -> Add -> Threads(users) -> Thread Group
+5.After creating the thread group, we need to click on it, then have to select few options as per needed
+  a) Number of threads (users) -> We need to pass users, Here i am passing 100 that means 100 users are executing that scenario at a time.
+  b) Ramp-up period -> It is a time in seconds, if we pass 10 means 100 users are going to be stay 10 seconds in this server.
+     first second -> 10 users logged into that server so total 10 users were there at the first second
+     second second -> 10 more users logged into that server, so here total 20 users were there at the two seconds
+     third second -> 1o more users logged into that server, so here total 30 users were there in three seconds.
+     like wise we have 100 users on the server in 10 seconds
+  c) Loop Count : 5 -> means first 100 users completed their scenario again 100 users coming and performing things like that it will repeat process for 5 times.
+      Beside of the loop count we have check box called as Infinite (if we select this), We need to specify thread lifetime in seconds if we pass that it will execute specified scenario 
+      until that time as soon as time gets elapsed,the execution will terminate.
+      Once we select infinite and thread lifetime we need to select Actions to be taken after a sample error. as lets say while doing execution at some point test script was failed then 
+      what to do in that situation that we need to specify here. like do we need to continue with next user/start Next Thread loop/Stop Thread/Stop Test/Stop Test Now.
+6.We need to maintain all our test cases under the thread group, and select all above mentioned points.
+7.start the run.
+8.Now scripts are getting started but we are unable to see Test results.To know about how to do that we need to know listners concept.
+
+

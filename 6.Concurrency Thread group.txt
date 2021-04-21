@@ -1,0 +1,26 @@
+Concurrency Thread Group :
+
+1.Now i am creating test script under concuurency thread group.
+2.We need to create test script under concurrency thread group, below is the process
+  a) Select total cincurrency that is total users you need to run here i am giving 60
+  b) We need to maintain all users on the server that time we need to start here i am giving 20
+      a) so users is 60 and ramp up time is 20 means it will take all given users 60 from 0 to 20 seconds bcz all users wont start 
+         application on a same time in real time so ramp up time used to do that like real time
+  c) Ramp up step count : Here we need to give some value in my case value is three
+      my total users are 60
+      Ramp up time is 20 seconds
+      Ramp up step count is 3 seconds
+        means it will divide all users into three stages and within 20 seconds all three stages users are going to be on the server
+           60/3 = 20, Each stage has 20 users
+           20/3 = 6.6666, for each 6.6666 seconds those users are up and they will be on the server.
+  d) Hold Target time : After 20 seconds all users are on the server and now how many seconds we need to hold them on the server is called
+                        as hold target time, in my case it is 150.
+  e) Note : Hold target time will be counted from after all users are on the server means after 20 seconds all users on the server and 
+            hold target time is 150 so total it is 20+150=170 seconds.
+  f) Based on the values that we are passing in concurrency thread group graph may vary, as it is visual representation of the values that
+     we given.
+  g) If we want to disbale any thread grop you just have to right click on selected thread group and select disable option.
+
+
+ 
+      

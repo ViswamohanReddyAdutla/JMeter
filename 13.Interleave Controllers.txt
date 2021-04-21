@@ -1,0 +1,11 @@
+1.Lets say if your working on real time application you dont take input data is same for all time right.
+2.Interleave is a type of controllers, it will execute only one sampler/controller at a time.
+3.Lets say if we have 10 steps under interleave controller and when we run the script for first run first step will pickup
+4.For second run, second data will pick up this process will continue until all the steps completed.
+5.execution order of the interleave controller is from top to down.
+6.We can pass test steps/existing controller inside of the interleave controllers
+
+Note :
+ In real time scenarios, when we try to book a flight each user will select different city's so we can write test script for different combinations of data and wrap it into the controller
+ and then will pass all those controllers inside of the interleave controller so that each time one controller will execute means each user will try to access application with diffferent
+ data

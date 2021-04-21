@@ -1,0 +1,41 @@
+1.Listners name it self says it is listneing jmeter outputs like logs, grpahs etc., and it will display those on jmeter console.
+2.Right Click on Test Plan -> Add -> Listners 
+3.Under the Listners we have number of listeners based on the project people will select which type of report they need and three most commonly used reports are mentioned below
+  a) View results Tree
+  b) Aggregate Report - Will generate details and all parameter outputs
+  c) Graph Results
+4.We need to add all above reports under thread group only.
+5.After adding these three reports, we can run the test and while script execution we can click on that listners so that we can see that respective results.
+6.After Execution, need to navigate to View results Tree -> Where we see green mark means passed and red mark means failed.
+  Some time even for green mark also failed. below is the example
+    While adding users into API, we are sending user details and getting response as 200 as it has succesfully added
+    If the user is alreday exists it will throw msg as User alreday available and throws response as 200 then script will pass, so if we take this metrics those are invalid metrics
+
+7. Aggregate Reports:
+   Samples : is nothing but number of times that we hit that request in our execution
+   Average : It is the average time taken by all the samples to execute specific label in milli seconds, below is the calculation of average
+      example: No.of users : 3
+      time : 1st user take 5 seconds, 2nd user takes 8 seconds, third user takes 12 second then average is
+            5+8+12/3= Average in milli seconds 
+   Min : Minimum time taken by user to get a response. as per above example 3 is minimum
+   Max : MAximum time taken by user to get a response. as per above example 12 is maximum
+   Error % : Percentage of failed requests per label. As mentioned if we hit one partuclar request n number of times in specified times how many times it failed to fetch response, that will
+             get in percentage.If error percentage crosses 10 or 15 then we have to look into else no need.
+   Throughput : Number of requests that processed per unit time(Seconds, Minutes, Hours) by the server.This time is calculated from the start of the first sampel at the end of the last 
+                sample, Larger Through put is better.
+     Example: Lets say we have 32.1/min throughput then that means that request is allowing 32.1 users per minute to access that particular requests.
+     difference between Average and Through put :
+      Average : Average is the time taken to get the response
+      Throughput : it is time taken by the server for particular request. Through put is basically server capability.
+      90% Line : 90% of the user out of recorderd samples have not taken more than so and so time in console in milli seconds to get the response.
+      95% Line : 95% of the user out of recorderd samples have not taken more than so and so time in console in milli seconds to get the response.
+      99% Line : 99% of the user out of recorderd samples have not taken more than so and so time in console in milli seconds to get the response.   
+   Median : It is the time of the middle of the set of samples result, It indicates that 50% of the samples took no more than this time.i.e., Remainder took at least as long.
+
+8.Graph Results :
+  most of the times we dont need to send graphs to clients but this graph is just to see how are we getting response from the server.
+   Standard deviation : This shows the set of exceptional cases which were deaviating from the average vale of sample response time, the lesser this value more consits the data.standard 
+                        deviation should be less than or equal to half of the average time for a label.
+
+
+   

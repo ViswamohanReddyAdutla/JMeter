@@ -1,0 +1,27 @@
+Importance of timers:
+1.Lets say in real time scenario, while sending requests to a particular server all users cant hit particular request at a time there might be some time change within seconds/milli seconds.
+2.So To acheive that particular time scenario same like real timers coming into the picture
+3.Jmeter provides timers where we can specify time in seconds as per that time our requests will be sent
+  example:
+   if 100 users are sending request to a server and in real time all users may can't acces that server at the exact point of time so here timers coming into the picture will pass
+   some time like 5 seconds then all 100 users will hit that request within 5 seconds.
+4.Here we need to pass time in milliseconds 300 milliseconds = 3 seconds.
+5.If we wont apply time then first user will go and complete transaction after immediate transaction second thread will start, now we need to wait atleast three seconds so that data
+  base will update in that time.
+6.Now lets add timer like below
+  Right click on Thread group -> Add -> Timer -> Constant Timer
+7.i have given 300 milliseconds that means 3 seconds so when i add listner View results in table where i see the results afetr execution of one thread it is waiting for three seconds and 
+  then another thread will pick up.
+8.Same as Constant timer we have gaussian random timer it will take waiting time and also deviation time
+  example:
+   lets run 5 threads, So for first thread execution is completed for 5 seconds then
+   our second thread wll start after 8 seconds bcz our wait time is 3 and first thread execution completed at 5 so total 8 seconds, lets say second thread execution completed in 2 sec
+   then third thread will execute after 5 seconds of second thread execution bcz wait time is 3 and second thread execution completed in 2 seconds.
+   like that it will perform all steps.
+9.Same as above timers we have a timer called constant throughput timer
+  Throughput means the maximum amount of requeste per second handeled by the server.
+  lets say if our server is handeling 200 requests per minute but you want to reduce the number of request per minute to 100, So that you can achieve through constant throughput timer 
+  where we can pass how many requests you need to serve below is the process.
+   right click on thread group -> Add -> timer -> constant throughput timer.
+   once you select this timer, just click on that timer then pass the target throughput as 100.0 thats all then it will serve only 100 request per minute even if the server is able to more
+   lets say if your server is able to serve 50 requests per minute but you passed 100 then it will serve only 50 bcz server can't execeed that one.     

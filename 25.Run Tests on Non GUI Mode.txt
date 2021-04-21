@@ -1,0 +1,17 @@
+1.As of now we have ran scripts from the jmeter. for that we have to open Jmeter and have to run it for that process it will take some process in your machine so to avoid that
+  will some times prefer to go for NOn GUI mode that means we need to run scripts from cmd as per the below.
+2.Open cmd and change current working directory to inside of the bin directory where we installed jmeter, in my case below is the path.
+  D:\Setup\apache-jmeter-5.4.1\apache-jmeter-5.4.1\bin
+3.Now use below command to run test plan scripts
+   jmeter -n -t Assertions.jmx
+      jmeter -n           -> indicates Jmeter in Non GUI mode
+      -t                  -> Test plan Name/Test Case Name  (in Jmeter terminology it was Test Plan Name)
+      Assertions.jmx      -> Test Plan Name with extension
+4.Here i dont have my test script under bin folder so we need to pass below command instead of above.
+   jmeter -n -t D:\Personal\JMeter\TestPlan\Assertions.jmx
+     jmeter -n                                        -> indicates jmeter in NOn GUI mode
+     -t                                               -> Test Plan Name
+     D:\Personal\JMeter\TestPlan\Assertions.jmx       -> Path and test plan name with extension where our jmeter script is actually located.
+5.After the run we see few things like max,summary,min,Avg in command prompt and in the last step we see that end of run text that means script execution is actually completed.
+
+    

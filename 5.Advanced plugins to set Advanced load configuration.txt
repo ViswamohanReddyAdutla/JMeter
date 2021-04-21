@@ -1,0 +1,22 @@
+1.As of now we know how to put load on the server like number of users to run and Ramp-up time like that.
+2.if we want to put advanced load in servers we need to import few more plugins into jmeter tool, follow below process
+  a) Download jar from the below url.
+       https://jmeter-plugins.org/wiki/PluginsManager/
+           or 
+  b) just go to google and search for "jmeter plugins", you can get number of plugins.you can download based on your requirment.
+  c) Instead of this i can download plugin manager uing above mentioned url, by which we can install any plugin in the tool itself.
+  d) After installing of the plugin manager go to jmeter options there you can see option called plugin manager here i didnt installed yet
+     hence i am not able to see plugin manager option.
+  e) once you have downloaded JAR you have to put that jar file into Jmeter lib/ext directory and then restart Jmeter.
+  f) After that go to options and then you are able to see Plugin Manager option.
+  g) Now click on Plugin Manager then you can see three tabs like, installed plugins, available plugins, upgrades
+      installed plugins -> which are already installed in your machine
+      Available plugins -> which are ready to install in your machines
+      updates -> as we know updates for installed one
+  f) Here i am going to install one plugin called custom thread groups which has different types of thread groups,
+     we just click on check box particular plgin and click on apply changes and restart jmeter, So it will automatically restart the jmeter 
+     if not you can do it manually then you can see the changes. 
+  g) once your trying to create a thread group by navigating Right click on Test Plan -> Add -> Threads(Users) -> Then you can see
+     customized thread groups.You can chosee what you want and write your test script under this plugin.
+  h) Now i am creating concurrency thread group here.
+

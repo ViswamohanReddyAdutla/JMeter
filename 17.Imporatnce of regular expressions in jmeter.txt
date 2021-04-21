@@ -1,0 +1,27 @@
+1.Here i am trying to login yo heroku app using below url
+   https://the-internet.herokuapp.com/login.
+2.So while logiing this url, need to pass credentials like username and password.
+3.Username and password are displaying in the screen so we can hardcode those details in script and will login to application.
+4.As of now everything is good, but what our application credentails are changing every day then our script will fail, here regular expressions comes into the picture.
+
+Importance of regular expressions in jmeter:
+
+1.Instead of harcoding username and passwords, what if we fetch it from the application itself bcz those credentials are apperaing in home page
+2.To fetch those details we need regular expressions
+3.After launching into the application we are getting credentials so after first step will add Regular expression extractor
+4.If we have 5 steps in our script, we are getting these credentials after first sampler/request, so we need to add Regular expression extractor under this step follow below process to add 
+  that.
+   Right click on step -> Add -> Post Processors -> Regular expression extractor
+ Now just click on regular expression that you added just now select below options based on your choice
+  a) Pass variable name in the filed of name of created variable here i am creating variable name as user.
+  b) select radio button for main samples or sub samples, In my case i am adding this expression under login request so that was main sample and i dont have any sub samples hence selecting 
+     main sample only.
+  c) Select field to check radio button, once your request sent to application it returns response right, in that response you must have credentails go and search for it in your response
+     if that credentials are avaiable under response body then select body or if those values are avaiable under response headers then select Response header like wise you can choose
+     correct one in my case my expected things are under body so i am checking out body option over here.
+  d) Now open the next request/sampler where username and password fileds are available in your script there you can see hard coded values so to override that we need to pass above created
+     variable in the value filed for username, you have to pass variable name like below
+      "{user}"
+5.As of now we created variable for username only
+6.Need to create variable for password and also we need to fetch credentials from the previous step response and need to store over here.
+7.Will do it in 18.Regex_2.txt file

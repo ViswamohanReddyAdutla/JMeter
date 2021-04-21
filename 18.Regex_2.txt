@@ -1,0 +1,46 @@
+1.As of now last script we have created variable for username now try to pass value for that variable dynamically below is the process to do so.
+
+2.click on regular expression extractor and then pass vale to Regular Expression filed. What to pass?
+  go to previous sampler respone and there you can see your user id right, copy few words before and after that user name, like below
+    Enter <em>tomsmith</em> for the username 
+      Here <em> and </em>  -> are html tags inside of this tag we have actual user name, for now copy above line and paste it in Regular expression field
+
+3.Now i have passed this text over there, now in that line tomsmith is hardcoded lets modify above line like below and update same in Regular expression field
+     Enter <em>(.+?)</em> for the username
+           .    -> Dot means any character
+           +    -> Any number of characters
+           ?    -> Matching elements
+     We have enclosed above stuff in brackets that we are grouping that username
+
+4.Now pass Template field like below
+   $1$
+    Here $1$ indicates first grouping value
+    Example 1:
+     In above our regular expression we have passed below thing
+      Enter <em>(.+?)</em> for the username
+       Here we did grouping only one time and we need that value so we passed $1$ 
+    Example 2:
+     Enter <em>(.+?)</em> for the (username)
+     $2$
+       Here in above query i have passed two groupings and also passed $2$ then second grouping will come and store in our actual variable
+    Example 3:
+      Enter <em>(.+?)</em> for the username
+      $0$
+        Above i have one grouping but passed $0$ then will get entire value like below and stored over in our actual variable
+      Enter actual name from app for the username
+
+5.You have passed  Enter <em>tomsmith</em> for the username  in Regular expression field what if we have this filed more than one time in response it will confuse from where it needs to
+  fetch, so we need to pass 1 then it will fetch required value from first match itself
+                            0 then it will fetch value from any match randomly
+
+6.If unfortunately we didnt get any value so that we need to pass default value like admin, or select check box as Use empty default value.
+
+7.After all this, we need to check which value we got from the server, to check that we need to go to response of the server and verify manually, but it is difficult for all times 
+  so will add a sample called as debug sampler under that thread group
+    Right click on thread group -> Add -> sampler -> debug sampler
+
+8.Your done with all steps it will fetch user name from the server and pass for login and it will show in console what are the username that we got from the server. 
+
+9.Same like username i have created one more regular expression for password also and fetched the required data and passed same like username.
+
+10.As of now, We have passed two extractors one is for username and another one is for password, now lets grab both in a single extractor will see it in next file called as 19.Regex_3.txt       

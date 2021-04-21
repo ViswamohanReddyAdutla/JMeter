@@ -1,0 +1,24 @@
+1.Under this thread we need to create CSV Data set config file and need to pass data in that file and then pass the csv data file details over there.
+   Right click on thread group -> Add -> Config Elements -> CSV Data set config
+
+2.Now need to pass below fields in csv data set config 
+
+3.Under configure the CSV data source.
+  select Filename with path : D:\Personal\JMeter\data.csv
+  select variable Names (comma-delimited): first,last,email   (All column names)
+    in csv file i have stored firstname,lastname and email fields like above format.
+  Delimiter(use '\t' for tab) : ,   (In csv file i have seperated all values in comma so i have passed delimiter)
+
+4.Lets say, If we pass 10 users data in file and we try to hit 100 users then the first 10 therads will pick up data after that remaining
+  90 threads we don't have data right so if we pass Recycle on EOF = True then again it will start from zeroth data.
+
+5.If we pass Stop Thread on EOF as True then after completing data then it wont start from the user.
+
+6.Here we have passed user,email and password so i am treating these values as variables and will pass these variables inside of the sampler like below.
+  ${User}
+  ${email}
+  ${pwd}
+ Then it will fetch all these values from the data.csv files.
+
+7.Now just run the script by passing number of threads you want to hit.then your job will done for data driven testing.  
+

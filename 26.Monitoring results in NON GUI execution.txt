@@ -1,0 +1,12 @@
+1.As of now we are able to see the results in command prompts itself but those are not at that handpicked
+2.So we can store all our test results in selected folder for that we need to use below command.
+   jmeter -n -t D:\Personal\JMeter\TestPlan\Assertions.jmx -l D:\Personal\JMeter\TestPlan\Reports\results
+     here 
+      -l                                                -> Represents Reports
+      D:\Personal\JMeter\TestPlan\Results               -> Here Test results will store under this folder with name results and here i dindt mentioned results file extension so it will res
+                                                           ults file with .txt file below command is to store results in jmeter extension i.e., .jtl
+   jmeter -n -t D:\Personal\JMeter\TestPlan\Assertions.jmx -l D:\Personal\JMeter\TestPlan\Reports\results.jtl
+     Now to open .jtl extension report, we need to open one empty excel file and then just drag our report into it.
+ 
+3.Thats it, your job is done, now your able to store results in excel file.
+4.Now we have to apply more threads for that we need to open script and chnage threads in thread group level and ave it we cant pass threads count through command prompt.

@@ -1,0 +1,8 @@
+1.Select test script under Ultimate thread group
+2.Now select ultimate thread group thread and then select Add row button
+3.Enter Thread count in first column, number is 60
+4.Here I have mentioned intial delay as 5 seconds, Means after starting of execution it wont start until this time.else it will start at the zeroth second.
+5.Start up time is 30 seconds it is nothing but ramp up time that means within this time, all users will be up on the server.
+6.I have given hold target time is 150 seconds that means : holding all those users on the server until this time ends.
+7.Shutdown time we need to privde based on this time, user will exit from the server, here i have given 10 means all users will be dropped off from the server withing this time.
+  here i have given shutdown time as 10 seconds.

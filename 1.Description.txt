@@ -1,0 +1,14 @@
+Jmeter is Perfromance test tool
+
+ Testing an application with some specified workload so that will get to know that application behaviour under load
+ Performace Testing/Load Testing/Umbrella Testing  -> All are same
+
+Jmeter is a tool it will help us to do performance testing.
+To do load Testing we dont need an application UI.
+Jmeter is developed in java language hence java is required to install in machine.
+We have number of test tools but usage of jmeter is rapidly growing due to below reasons.
+ 1.Open Source (No need to pay).
+ 2.Cross platform (It will work in all windows formats).
+ 3.Scripting knowledge is not required to learn JMeter.
+ 4.JMeter GUI is more user-friendly.
+Basically in Jmeter, will write all our scripts under test plan.

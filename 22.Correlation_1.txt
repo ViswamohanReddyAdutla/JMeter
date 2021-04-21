@@ -1,0 +1,13 @@
+So in webtours application click on Administration linka and then select third option "Set Login form action to error page"  so it will
+thrown session id in hidden mode. But i have not installed webtours hence i am trying in another application but it is not good application 
+to show you the correlation concepts hence i am writing description manually.
+
+1.Create a thread group and record script
+2.Rename Thread group name to coorelation
+3.copy/paste all samples inside of that coorelation
+4.Now execute the script but it is not getting passed those in listners it is saying all are passed but as per response it is not passed
+  successfuly.
+5.But if you pass same samplers under the thread group then those steps working perfectly.
+6.Bcz here we have maintained all our samplers under the coorelation not thread group.
+7.Here i have disabled main Threadgroup and enabled only correlation part.
+7.In next file 23.correlation_2.txt file will identify correlation and analysing it.

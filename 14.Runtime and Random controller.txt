@@ -1,0 +1,15 @@
+1.Runtime controller:
+   It will control the execution of its samplers/request for the given time
+2.Create run time controller and place existing controller like Booking flight controller and give the time as 20 seconds then this particular sampler will execute until 20 seconds
+  completed.
+3.That means we are putting load on particular sampler continously.
+
+Note : 
+  In real time scenario, sometimes only some module is breaking lets say in airlines booking only reservation sampler getting failed on some times like black fridays or deals day
+  so our concentration is to observer more and more on particular sampler so we keep on load for particualr module at some point of time
+
+4.Random order controller :
+  Random order controller is same as interleave controller but it wont follow any order like top to bottom.
+5.Random order controller picks only one sampler/controller at a time but it wont follow any order, may be for the first run it may take 10th controller and for second 
+  iteration it may take 100th controller/sampler and so on..!
+6.Random controller will pick only one sampler/controller for execution randomly.

@@ -1,0 +1,53 @@
+1.As per the last test script we are able to capture HTTP session and able to login server with valid data
+2.For confirmation, we have verified response body to avoid that will use assertions like below
+3.Lets say if we need to perform test script we may have number of test steps, if you need to put assertion on step 2 then you have to add assertion response in that step like below
+  Right click on the step -> Add -> Assertions -> click on Response Assertion
+  that response will add under that step, Now click on that assertion
+  Select below options wisely
+   a) Apply to : 
+        If you have multiple stpes inside of the step 2, and now you need to do assertions on that step response so you have to choose sub-samples only
+        If your expecting assertion data in step 2 instead of under sub samples then you have to choose Main-samples only
+        If your expecting assertion data in step 2 and its under sub samples also, so you need to select Main-sample and sub-samples
+   b) Field to Test :
+        If your applying assertion on text, then select Text Response
+        If your applying assertion on response code, then select Response code
+        If your applying assertion on text message, then select Response Message
+        If your applying assertion on response headers, then select Response headers
+        If your applying assertion on request headers, then select request headers
+   c) Pattern MAtching rules :
+        if your expected data is part of actual data then use Contains
+        If your expected data matches actual data then use Matches
+        If your expected data is equal to actual data then use Equals
+        If your expected data is substring of actual data then use Substring
+        If Your expected data is not same as actual data then use Not
+4.Click on button "Add"
+5.Pass Text which you need to assert, Here i am passing Text as "Welcome to the Secure Area"
+6.Here i have i applied three assertions one is for headers and one is for text and another one is for status code in sub-samples.
+7.If my script is too long, then i am not sure what are all the assertion i applied to know what all we applied we need to add one listner called as Assertion Results like below
+   Right click on Thread group -> Add -> Listners -> Assertion Listner
+ Note : Assertion Results is a listner and it should be under Thread group. which will display if any assertion failed else it jsut prints all samples.
+
+--------------------------------------------------------------------------------------Different Types of assertions----------------------------------------------------------------
+8.As of now we have applied Response assertion but we have different types of assertions that we can apply based on the requirement.
+9.if we send request to the server then it generate response, and you can see that response size in bytes in response body, so now you want to apply assertion on it.
+  example:
+    if size in bytes is 100 then we can apply assertion with that 100, if any chance response size is more than 100 then the script will fail as assertion error.
+10.Why do we need Size in bytes Assertion, when we navigate to the browser server will respond based on your request but what if n number of users hits same server then the 
+   performance of the server is slow down that is the reason some times application load fully. But as per your client lets think they are expecting atleast 80 size even if the
+   full load on the server, we have to opt Size Assertion.
+    a) Right click on step on where you want to choose Size Assertion -> Add -> Assertions -> Size Assertion.
+11.Here befor i kept Size assertion i have checked Size in bytes for one particular request, where i see size in bytes is 3844
+12.So now lets use size Assertion, and will pass one value and for every run we will expect size more than that
+  example :
+   In above step i got 3844 as size, so now i will put size assertion with 3200 bcz every time size may vary if will increase load on the server and client confirmed that
+   at any load we are expecting particular size from the server, so will pass that size in size assertion so that it will pass/fail based on the response size.
+13.When i tested size assrtion with above mentioned point it is working as expected like at any load server is giving the response size is more than 3600 so its good interms of
+   response in size.
+14.Same like size asertion, Duration assertion is also place an important role at certain load we need to know how much time application is taking to generate the response
+15.In duration response, time is taken in milliseconds
+16.Before using duration assertion, first run load test with one user and then verify particular test response where you can find load time for that step and same like above
+   you can pass sometime which we will expect at even high load.
+   Right click on the step -> Add -> Assertions -> Duration Assertion.
+17.For my script when i run with single user load time is 1328 so lets run with 500 users and apply assertion that i need atleast 2000 time duration even if the highest load
+18.When i run test with above specifications most of the users didnt get response within the specified time so scripts were getting failed.thats good, that we need to share it with client
+   so dev team will optimize the application for faster performance.

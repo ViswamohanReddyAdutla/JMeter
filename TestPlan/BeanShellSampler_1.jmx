@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">// I am comment
+log.info(&quot;I am printing&quot;)
+var a=12;
+var b=14;
+var sum=a+b;
+//log.info(&quot;sum&quot;);
+// Here in above command sum is integer and in java script we can&apos;t print integers so we have to append those integers with string and will concatinate it to string like below
+//log.info(&quot;Result is&quot;+sum);
+//We have sum of these two values in a variable called as sum so now i need to assign that value to a. like below
+vars.put(&quot;a&quot;,&quot;sum&quot;);  // vars.put method needs to arguments one is variable and another is value in which value we are going to pass into the respective variable
+log.info(vars.get(&quot;a&quot;)); // vars.get method is used to get the value of the variable.
+vars.put(&quot;a&quot;,&quot;Hi&quot;);  // Here i am putting string Hi to that variable a
+log.info(vars.get(&quot;a&quot;)); // Here i am getting that value of the variable.
+//ctx   -&gt; ctx is a jmeter varible which will give lot of methods for the actions.
+
+// Example : ctx.getmethod()  -&gt; if we are running 100 threads and assume that we kept this statement at some point in script it will give you how many threads opened at that time.
+
+int threadnum=ctx.getThreadNum();
+log.info(&quot;Thread Num is&quot;+threadnum);</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

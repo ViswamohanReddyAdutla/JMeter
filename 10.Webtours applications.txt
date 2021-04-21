@@ -1,0 +1,22 @@
+1.To perform load testing we need websites same like real time applications
+2.If we try to do it in random applications, it may impact their business and also some websites will block you if users are getting increased
+3.To avoid that will use any of the below applications.
+  a) https://blazedemo.com/
+  b) https://the-internet.herokuapp.com/
+  c) https://marketplace.microfocus.com/appdelivery/content/web-tours-sample-application
+    webtours application was developed by hp for load testing practise but we need to download this app and run it in the local server then
+    we can paly with it.
+      1. Go to above url and click on download
+      2. After successful download you can see two files one is zip file and other is executable file called as straberry-perl-version
+      3.Extract the zip file and click on executable so that it will install it in your machine
+      4.After suuccessful installation need to open application folder where we can one bat file named as StartServer.bat just double 
+        click it, then application will up and run on local server
+      5.To stop the server just press control C in command prompt or close cmd directly.
+      6.Now we need url for that application to create the scripts right, for that navigate to config folder under webtours application
+      7.you can see httpd.conf file and you can open that file in notepad
+      8.Search for listen and then you can find port number on which port application is running by default port number is 8080, so go to 
+        browser and use below url to open application in browser.
+          localhost:8080/webTours/home.html -> then we can see the application
+ 
+Note : I am not intrested to install this application currently so i will run my next scripts on blazedemo.com
+            

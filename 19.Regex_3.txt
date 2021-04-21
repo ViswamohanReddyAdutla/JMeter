@@ -1,0 +1,11 @@
+1.As of last file, we have created two regular expression extractor to fetch user id and password that is acceptable but still we can reduce that to one extractor, follow below process 
+  to achieve it.
+2.Everything is same for script point of view, now you just have to create one regualr expression extractor and the below process.
+3.In the field of Regular expression extractor, I have passed below text
+   Enter <em>(.+?)</em> for the username and <em>(.+?)</em> for the password.
+     Here i have amintained two groups one is for username and other is for password
+     but i have created variable for only username and also all step are same as per last script
+4.Lets run see the response body content in debuger file where i am able to see username and password with different variable names
+5.SO i can pass this variable names directly as part of values to those fields, job done within a single extarctor we have extracted both username and password seamlessly.
+6.We can also apply assertions for script validation
+

@@ -1,0 +1,17 @@
+1.As of now we used login scenarios and passed username and password fields but now i want to test register users in particular application.
+2.To register we need to maintain unique usernames,emails etc.,
+3.Here i have requirement to test load on register page with thousand users to do so do we need to create thousand register samples with different data? NO its not possible.
+4.Here Data Driven testing comes into the picture where will pass all these data from external sources and will provide ability to read all those data from our Jmeter script.
+5.Here I am going to use below application to test load. It was not sign up page but if we pass different details it will take you to next page so will apply assertions once
+  We give all required data
+     http://www.practiceselenium.com/practice-form.html
+6.Once we submit all details in above url, we are getting below message
+   We're passionate about tea.
+  So will apply assertions with this message.
+
+
+
+
+
+
+

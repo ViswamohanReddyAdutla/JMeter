@@ -1,0 +1,10 @@
+1.So in most of the applications it will generate session id.
+2.So while recording it generates one session ID and it was stored in sampler and i have passed that sampler under correlation then when i run the script it started failing.
+3.Bcz this session id is dynamic for every run so while doing automation it was not matching with the recorder one hence script got failed.
+4.Now we have to take a look where do we have this session id in our previous responses then will make sure to availble that session id to all of our samplers inside of this script that
+  is called correlation.
+5.Check response for each samplere and then definately you will see session id so you have to extract that session id and store in a variable so that you can pass that variable name
+  into it.
+6.Unfortunately in my script session id is not getting stored and it was not mandatory for all websites but banking,finance teams do maintain this id's, i am writing this based on those
+  application comments.
+7.Next will write description in 24.Correlation_3.txt and fetch session id and then will store into a variable.
